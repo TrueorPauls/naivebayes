@@ -1,0 +1,391 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #d8e2dc;
+    font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3c2f2c;
+    z-index: 1000;
+}
+
+#kabhome {
+    position: absolute;
+    text-decoration: none;
+    color: #f0ebe3;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.logo {
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #22c55e;
+}
+
+.btn {
+    background: #166534;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background: #22c55e;
+    color: white;
+}
+
+/* ── NAV BADGE ── */
+.cart-badge {
+    background: #22c55e;
+    color: #fff;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+/* ── PAGE WRAP ── */
+.reviews-wrap {
+    padding: 100px 60px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ── HEADER ── */
+.reviews-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.reviews-header h1 {
+    font-family: Georgia, serif;
+    font-size: 2.4rem;
+    color: #14532d;
+}
+
+.reviews-header p {
+    color: #555;
+    margin-top: 8px;
+    font-size: 1rem;
+}
+
+.sentiment-summary {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.sentiment-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 28px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    min-width: 130px;
+}
+
+.sentiment-card .num {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
+
+.sentiment-card .lbl {
+    font-size: 0.82rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.positive-card .num {
+    color: #166534;
+}
+
+.negative-card .num {
+    color: #c0392b;
+}
+
+.review-form-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    margin-bottom: 36px;
+}
+
+.review-form-box h2 {
+    font-family: Georgia, serif;
+    color: #14532d;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+}
+
+.review-form-box textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 110px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.review-form-box textarea:focus {
+    border-color: #14532d;
+}
+
+.submit-review-btn {
+    margin-top: 12px;
+    background: #14532d;
+    color: #fff;
+    border: none;
+    padding: 11px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submit-review-btn:hover {
+    background: #22c55e;
+}
+
+.submit-review-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.result-card {
+    display: none;
+    margin-top: 16px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    animation: fadeIn 0.4s ease;
+}
+
+.result-positive {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.result-negative {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.result-error {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reviews-list h2 {
+    font-family: Georgia, serif;
+    color: #14532d;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+}
+
+.review-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.sentiment-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.review-body {
+    flex: 1;
+}
+
+.review-body .reviewer-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.review-body .review-text {
+    color: #555;
+    margin-top: 6px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.review-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.sentiment-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-positive {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-negative {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.review-date {
+    font-size: 0.78rem;
+    color: #aaa;
+}
+
+.no-reviews {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.login-required {
+    text-align: center;
+    padding: 24px 16px;
+    background: #f4f7f5;
+    border-radius: 10px;
+    border: 2px dashed #c4d4ca;
+}
+
+.login-required .lock-icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login-required p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.login-to-review-btn {
+    display: inline-block;
+    background: #14532d;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.login-to-review-btn:hover {
+    background: #22c55e;
+}
+
+.signup-btn {
+    background: #4a5c52;
+    margin-left: 10px;
+}
+
+.signup-btn:hover {
+    background: #22c55e;
+}
+
+.or-text {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 0 6px;
+}
+.confidence-badge {
+    background-color: #f0f2f5;
+    color: #65676b;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 8px;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ddd;
+}
